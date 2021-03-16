@@ -1,18 +1,6 @@
-<style>
-:host {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 14px;
-    color: #333;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.css">
+<app-top-bar></app-top-bar>
 
-<div class="toolbar" role="banner">
-    NutriSystem
-</div>
-
-<div class="content" role="main">
-    Here we go
+<div class="content">
+  <router-outlet></router-outlet>
 </div>
