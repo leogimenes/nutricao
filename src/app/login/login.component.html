@@ -1,0 +1,20 @@
+<div class="card-container">
+    <div class="row">
+        <form class="card" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="col-md-12">
+                <label class="col-md-12">
+                    Nome:
+                    <input type="text" formControlName="name">
+                </label>
+            </div>
+            <div class="col-md-12">
+                <label class="col-md-12">
+                    Senha:
+                    <input type="password" formControlName="password">
+                </label>
+            </div>
+
+            <button class="center-block" type="submit" [disabled]="!loginForm.valid">Entrar</button>
+        </form>
+    </div>
+</div>
