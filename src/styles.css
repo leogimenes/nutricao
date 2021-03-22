@@ -34,7 +34,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #056905;
+    background-color: #1f1e58d5;
     color: white;
     font-weight: 600;
   }
@@ -91,7 +91,7 @@
   .card {
     border-radius: 10px;
     border: 1px solid #eee;
-    background-color: #fafafa;
+    background-color: #d9d6fd79;
     /* height: 40px; */
     /* width: 200px; */
     margin: 0 8px 16px;
@@ -204,8 +204,8 @@
     width: 85px;
     border-radius: 10px;
     margin: 8px;
-    background-color: rgba(255, 255, 255, 0.89);
-    border: 1px solid #72f74aab;
+    background-color: #e8e6fc;
+    border: 1px solid #5b4af7ab;
     display: flex;
     justify-content: center;
     align-items: center;
