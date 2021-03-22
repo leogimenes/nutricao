@@ -13,14 +13,14 @@ export class CadastroComponent implements OnInit {
     age: [0],
     mail: [''],
     phone: [0],
+    bloodType: [''],
     address: this.fb.group({
       street: [''],
-      hNumber: [0],
+      num: [0],
       city: [''],
       state: [''],
       zip: [0]
     }),
-    bloodType: ['']
   })
 
   
@@ -33,7 +33,9 @@ export class CadastroComponent implements OnInit {
   }
 
   onSubmit(){
-
+    const paciente = this.cadastroForm.value;
+    console.log(paciente);
+    
   }
 
 }

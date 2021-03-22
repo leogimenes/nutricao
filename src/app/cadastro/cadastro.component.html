@@ -1,5 +1,5 @@
-<form class="card" [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
-    <div class="row">
+<form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
+    <div class="row form-group card">
         <h2>Dados do paciente</h2>
         <!-- Nome -->
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -7,9 +7,7 @@
                 <label>
                     Primeiro nome:
                 </label>
-            </div>
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <input type="text" formControlName="firstName">
+                <input class="form-control" type="text" formControlName="firstName">
             </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -17,9 +15,7 @@
                 <label>
                     Sobrenome:
                 </label>
-            </div>
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <input type="text" formControlName="firstName">
+                <input class="form-control" type="text" formControlName="lastName">
             </div>
         </div>
         <!-- Idade, Email e Telefone -->
@@ -30,7 +26,7 @@
                 </label>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <input id="idade" type="number" formControlName="age">
+                <input class="form-control" id="idade" type="number" formControlName="age">
             </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -40,7 +36,7 @@
                 </label>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <input type="email" formControlName="mail" id="mail">
+                <input class="form-control" type="email" formControlName="mail" id="mail">
             </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -50,12 +46,12 @@
                 </label>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <input type="number" formControlName="phone" id="phone">
+                <input class="form-control" type="number" formControlName="phone" id="phone">
             </div>
         </div>
     </div>
     <!-- Endereço -->
-    <div class="row" formGroupName="address">
+    <div class="row form-group card" formGroupName="address">
         <h3>Endereço</h3>
 
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -65,17 +61,18 @@
                 </label>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <input type="text" formControlName="street" id="street">
+                <input class="form-control" type="text" formControlName="street" id="street">
             </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <label for="hNumber">
+                <label for="num">
                     Número:
                 </label>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <input type="number" formControlName="hNumber" id="hNumber">
+                <input class="form-control" type="number" onkeydown="return event.keyCode !== 69"
+                    formControlName="num" id="num">
             </div>
         </div>
 
@@ -86,7 +83,7 @@
                 </label>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <input type="text" formControlName="city" id="city">
+                <input class="form-control" type="text" formControlName="city" id="city">
             </div>
         </div>
 
@@ -97,7 +94,7 @@
                 </label>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <input type="text" formControlName="state" id="state">
+                <input class="form-control" type="text" formControlName="state" id="state">
             </div>
         </div>
 
@@ -108,19 +105,19 @@
                 </label>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <input type="number" formControlName="zip" id="zip">
+                <input class="form-control" type="number" formControlName="zip" id="zip">
             </div>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <label id="bloodType-label">Tipo sanguíneo</label>
-                <mat-radio-group
-                aria-labelledby="bloodType-label"
-                class="bloodType"></mat-radio-group>
-            </div>
-        </div>
+    <!-- Tipo Sanguíneo -->
+    <div class="row form-group card">
+        <label for="bloodType">Tipo Sanguíneo</label>
+        <select class="form-control" id="bloodType" formControlName="bloodType">
+            <option *ngFor="let tipo of tipos" [value]="tipo">{{ tipo }}</option>
+        </select>
+    </div>
+    <!-- submit -->
+    <div>
+        <button class="center-block circle-link" type="submit" [disabled]="!cadastroForm.valid">Entrar</button>
     </div>
 </form>
