@@ -11,6 +11,7 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LoginComponent } from './login/login.component';
+import { CadastroProntuarioComponent } from './cadastro-prontuario/cadastro-prontuario.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { LoginComponent } from './login/login.component';
     TopBarComponent,
     CadastroComponent,
     PageNotFoundComponent,
-    LoginComponent
+    LoginComponent,
+    CadastroProntuarioComponent
   ],
   imports: [
     BrowserModule,
