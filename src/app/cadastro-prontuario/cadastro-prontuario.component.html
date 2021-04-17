@@ -45,18 +45,16 @@
             <div class="row form-group card" formGroupName="diagnostico">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <h3>Diagnóstico</h3>
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <!-- Conduta -->
-                        <label>
-                            Conduta:
-                        </label>
-                        <input class="form-control" type="text" formControlName="conduta">
+                    <!-- Conduta -->
+                    <label>
+                        Conduta:
+                    </label>
+                    <input class="form-control" type="text" formControlName="conduta">
 
-                        <label>
-                            Orientações nutricionais:
-                        </label>
-                        <input class="form-control" type="text" formControlName="orientacoesNutricionais">
-                    </div>
+                    <label>
+                        Orientações nutricionais:
+                    </label>
+                    <input class="form-control" type="text" formControlName="orientacoesNutricionais">
                 </div>
             </div>
         </div>
@@ -64,46 +62,47 @@
             <div class="row form-group card" formGroupName="planoAlimentar">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <h3>Plano Alimentar</h3>
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <!-- Plano Alimentar -->
-                        <label>
-                            Cálculo da Dieta:
-                        </label>
-                        <input class="form-control" type="number" formControlName="calculoDieta">
-                        <label>
-                            Modelos:
-                        </label>
-                        <select class="form-control" id="selecionaModelos" formControlName="selecionaModelos">
-                            <option *ngFor="let modelo of modelos" [value]="modelo">{{ modelo }}</option>
-                        </select>
-                    </div>
+                    <!-- Plano Alimentar -->
+                    <label>
+                        Cálculo da Dieta:
+                    </label>
+                    <input class="form-control" type="number" formControlName="calculoDieta">
+                    <label>
+                        Modelos:
+                    </label>
+                    <select class="form-control" id="selecionaModelos" formControlName="selecionaModelos">
+                        <option *ngFor="let modelo of modelos" [value]="modelo">{{ modelo }}</option>
+                    </select>
                 </div>
             </div>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="row form-group card">
-                <h4>Anexos</h4>
-                <ng-container formArrayName="anexos">
-                    <div  *ngFor="let _ of anexos.controls; index as i">
-                        <ng-container  [formGroupName]="i">
-                            <label>
-                                Título: 
-                            </label>
-                            <input class="form-control" formControlName="title" type="text">
-                            <label>
-                                Data: 
-                            </label>
-                            <input class="form-control" formControlName="date" type="datetime">
-                            <button></button>
-                        </ng-container>
-                    </div>
-                </ng-container>
-                <button (click)="addAnexo()" class="center-block circle-button">Novo</button>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <h3>Anexos</h3>
+                    <ng-container formArrayName="anexos">
+                        <div *ngFor="let _ of anexos.controls; index as i">
+                            <ng-container [formGroupName]="i">
+                                <label>
+                                    Título:
+                                </label>
+                                <input class="form-control" formControlName="title" type="text">
+                                <label>
+                                    Data:
+                                </label>
+                                <input class="form-control" formControlName="date" type="datetime">
+                                <button (click)="saveAnexo()" class="fas fa-save circle-button"></button>
+                            </ng-container>
+                        </div>
+                    </ng-container>
+                    <button (click)="addAnexo()" class="center-block circle-button">Novo</button>
+                </div>
             </div>
         </div>
     </div>
     <!-- submit -->
     <div>
-        <button class="center-block circle-button" type="submit" [disabled]="!prontuarioForm.valid">Entrar</button>
+        <button class="center-block circle-button fas fa-save" title="Atualizar formulário" type="submit"
+            [disabled]="!prontuarioForm.valid"></button>
     </div>
 </form>

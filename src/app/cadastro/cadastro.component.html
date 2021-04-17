@@ -1,4 +1,4 @@
-<form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()" class="card-container">
     <div class="row form-group card">
         <h2>Dados do paciente</h2>
         <!-- Nome -->
@@ -71,8 +71,8 @@
                 </label>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <input class="form-control" type="number" onkeydown="return event.keyCode !== 69"
-                    formControlName="num" id="num">
+                <input class="form-control" type="number" onkeydown="return event.keyCode !== 69" formControlName="num"
+                    id="num">
             </div>
         </div>
 
@@ -110,14 +110,16 @@
         </div>
     </div>
     <!-- Tipo Sanguíneo -->
-    <div class="row form-group card">
-        <label for="bloodType">Tipo Sanguíneo</label>
-        <select class="form-control" id="bloodType" formControlName="bloodType">
-            <option *ngFor="let tipo of tipos" [value]="tipo">{{ tipo }}</option>
-        </select>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+        <div class="card">
+            <label for="bloodType">Tipo Sanguíneo</label>
+            <select class="form-control" id="bloodType" formControlName="bloodType">
+                <option *ngFor="let tipo of tipos" [value]="tipo">{{ tipo }}</option>
+            </select>
+        </div>
     </div>
     <!-- submit -->
     <div>
-        <button class="center-block circle-link" type="submit" [disabled]="!cadastroForm.valid">Entrar</button>
+        <button class="center-block circle-link" type="submit" [disabled]="!cadastroForm.valid">Salvar</button>
     </div>
 </form>

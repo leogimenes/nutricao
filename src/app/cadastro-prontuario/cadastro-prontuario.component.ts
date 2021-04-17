@@ -17,7 +17,7 @@ export class CadastroProntuarioComponent implements OnInit {
         peso: [0.0],
         altura: [0.0],
         dobras: [0.0],
-        circunferencias: [0,0]
+        circunferencias: [0, 0]
       })
     }),
     diagnostico: this.fb.group({
@@ -35,7 +35,7 @@ export class CadastroProntuarioComponent implements OnInit {
     return this.prontuarioForm.get('anexos') as FormArray;
   }
 
-  addAnexo(){
+  addAnexo() {
     const anexo = this.fb.group({
       title: [''],
       date: ['']
@@ -43,8 +43,13 @@ export class CadastroProntuarioComponent implements OnInit {
     this.anexos.push(anexo);
   }
 
+  saveAnexo() {
+    console.log("Anexo salvo");
+
+  }
+
   modelos: string[] = ['Modelo 1', 'Modelo 2', 'Modelo 3', 'Modelo 4'];
-  constructor( private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
   }
