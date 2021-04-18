@@ -12,6 +12,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LoginComponent } from './login/login.component';
 import { CadastroProntuarioComponent } from './cadastro-prontuario/cadastro-prontuario.component';
+import { PacientesComponent } from './pacientes/pacientes.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { CadastroProntuarioComponent } from './cadastro-prontuario/cadastro-pron
     CadastroComponent,
     PageNotFoundComponent,
     LoginComponent,
-    CadastroProntuarioComponent
+    CadastroProntuarioComponent,
+    PacientesComponent
   ],
   imports: [
     BrowserModule,
