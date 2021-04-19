@@ -28,6 +28,7 @@ db.mongoose
   })
 
 require('./routes/paciente.routes')(app);
+require('./routes/nutricionista.routes')(app);
 
 app.get("/", (req, res) => {
   res.json({ message: "Hello"})
